@@ -31,26 +31,22 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 41, 41, 41),
+        title: const Text('МАШИНЫ НА ЛЮБОЙ ВКУС!'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.shopping_cart),
+            tooltip: 'Open shopping cart',
+            onPressed: () {},
+          ),
+        ],
+      ),
       body: ListView.builder(
         itemCount: carList.length,
         itemBuilder: (context, index) {
-          return CarWidget(
-            car: carList[index],
-            index: index + 1,
-          );
+          return CarWidget(car: carList[index], index: index + 1);
         },
-        // width: 500,
-        // color: Color.fromARGB(255, 255, 217, 63),
-        // child: Container(
-        //   padding: const EdgeInsets.all(20),
-        //   child: Container(
-        //     margin: const EdgeInsets.all(10),
-        //     child: const Column(
-        //       mainAxisAlignment: MainAxisAlignment.start,
-        //       children: <Widget>[],
-        //     ),
-        //   ),
-        // ),
       ),
     );
   }

@@ -94,13 +94,14 @@ class __$$CarProdImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$CarProdImpl implements _CarProd {
-  _$CarProdImpl({required final List<Car> cars}) : _cars = cars;
+  _$CarProdImpl({final List<Car> cars = const []}) : _cars = cars;
 
   factory _$CarProdImpl.fromJson(Map<String, dynamic> json) =>
       _$$CarProdImplFromJson(json);
 
   final List<Car> _cars;
   @override
+  @JsonKey()
   List<Car> get cars {
     if (_cars is EqualUnmodifiableListView) return _cars;
     // ignore: implicit_dynamic_type
@@ -140,7 +141,7 @@ class _$CarProdImpl implements _CarProd {
 }
 
 abstract class _CarProd implements CarProd {
-  factory _CarProd({required final List<Car> cars}) = _$CarProdImpl;
+  factory _CarProd({final List<Car> cars}) = _$CarProdImpl;
 
   factory _CarProd.fromJson(Map<String, dynamic> json) = _$CarProdImpl.fromJson;
 

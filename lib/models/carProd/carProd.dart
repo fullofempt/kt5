@@ -8,7 +8,7 @@ part 'carProd.g.dart';
 class CarProd with _$CarProd {
 
   factory CarProd({
-    required List<Car> cars,
+    @Default([]) List<Car> cars,
   }) = _CarProd;
 
   factory CarProd.fromJson(Map<String, dynamic> json) => _$CarProdFromJson(json);

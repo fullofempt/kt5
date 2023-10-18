@@ -8,9 +8,10 @@ part of 'carProd.dart';
 
 _$CarProdImpl _$$CarProdImplFromJson(Map<String, dynamic> json) =>
     _$CarProdImpl(
-      cars: (json['cars'] as List<dynamic>)
-          .map((e) => Car.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      cars: (json['cars'] as List<dynamic>?)
+              ?.map((e) => Car.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$CarProdImplToJson(_$CarProdImpl instance) =>
