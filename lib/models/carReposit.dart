@@ -18,7 +18,6 @@ class CarReposit {
 
   Future<List<Car>> getById(int id) async {
     var res = await httpClient.get('/$id');
-    print(res.data);
     if (res.statusCode != 200) {
       throw Exception(res.data);
     }

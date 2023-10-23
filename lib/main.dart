@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:kt5d/home_page.dart';
+
+import 'package:get/get.dart';
+import 'package:kt5d/models/carReposit.dart';
+
+import 'app/routes/app_pages.dart';
 
 void main() {
-  runApp(const MyApp());
-}
+  Get.put(() => CarReposit());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Car shop',
-      home: HomePage(),
-    );
-  }
+  runApp(
+    GetMaterialApp(
+      title: "Cars List",
+      initialRoute: AppPages.INITIAL,
+      getPages: AppPages.routes,
+    ),
+  );
 }
