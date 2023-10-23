@@ -28,7 +28,7 @@ class CarList extends StatelessWidget {
       ),
       trailing: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [Text("\$${car.price}")],
+        children: [Text(" ${car.price}")],
       ),
     );
   }

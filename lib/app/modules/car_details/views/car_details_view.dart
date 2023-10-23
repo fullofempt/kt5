@@ -43,13 +43,13 @@ class CarDetailsView extends GetView<CarDetailsController> {
                   padding: const EdgeInsets.only(top: 32, left: 16, right: 16),
                   child: Column(
                     children: [
-                      Text("${controller.car!.car_model}",
+                      Text(" ${controller.car!.car_model}",
                           style: const TextStyle(fontSize: 32)),
                       const SizedBox(height: 24,),
-                      Text("VIN: ${controller.car!.car}",
+                      Text("car: ${controller.car!.car}",
                           style: const TextStyle(fontSize: 12)),
                       Text(controller.car!.car_color),
-                      Text("\$ ${controller.car!.price}",
+                      Text(" ${controller.car!.price}",
                           style: const TextStyle(fontSize: 32)),
 
                       ElevatedButton(onPressed: (){}, child: Text("Купить")),

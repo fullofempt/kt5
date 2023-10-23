@@ -6,7 +6,7 @@ import 'package:kt5d/models/carReposit.dart';
 import 'app/routes/app_pages.dart';
 
 void main() {
-  Get.put(() => CarReposit());
+  Get.put(CarReposit());
 
   runApp(
     GetMaterialApp(
@@ -16,3 +16,4 @@ void main() {
     ),
   );
 }
+

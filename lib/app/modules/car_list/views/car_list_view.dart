@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:kt5d/models/carProd/carProd.dart';
 import 'package:kt5d/widget/carWidget.dart';
 
 import '../controllers/car_list_controller.dart';
@@ -13,7 +12,7 @@ class CarListView extends GetView<CarListController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('CarsListView'),
+          title: const Text('Авто всем!'),
         ),
         body: Center(
           child: Obx(() {
@@ -31,7 +30,7 @@ class CarListView extends GetView<CarListController> {
                       child: ListView.builder(
                           itemCount: controller.cars.length,
                           itemBuilder: (context, index) {
-                            return CarWidget(car: controller.cars[index]);
+                            return CarList(car: controller.cars[index]);
                           }),
                     ),
                   ),
