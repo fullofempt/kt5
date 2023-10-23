@@ -19,7 +19,7 @@ class CarList extends StatelessWidget {
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('${car.car} ${car.car_model} ${car.id}'),
+          Text('${car.car} ${car.car_model}'),
           Text(
             car.car_color,
             style: TextStyle(fontSize: 10, color: Get.theme.primaryColor),

@@ -10,7 +10,7 @@ void main() {
 
   runApp(
     GetMaterialApp(
-      title: "Cars List",
+      title: "Машинки",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
     ),

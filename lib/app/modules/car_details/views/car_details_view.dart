@@ -17,10 +17,10 @@ class CarDetailsView extends GetView<CarDetailsController> {
           if (controller.state == States.loading) {
             return const Center(
                 child: SizedBox(
-                  width: 24,
-                  height: 24,
-                  child: CircularProgressIndicator(),
-                ));
+              width: 30,
+              height: 30,
+              child: CircularProgressIndicator(),
+            ));
           }
           if (controller.state == States.error || controller.car == null) {
             showDialog(
@@ -44,16 +44,19 @@ class CarDetailsView extends GetView<CarDetailsController> {
                   child: Column(
                     children: [
                       Text(" ${controller.car!.car_model}",
-                          style: const TextStyle(fontSize: 32)),
-                      const SizedBox(height: 24,),
+                          style: const TextStyle(fontSize: 20)),
+                      const SizedBox(
+                        height: 24,
+                      ),
                       Text("car: ${controller.car!.car}",
-                          style: const TextStyle(fontSize: 12)),
+                          style: const TextStyle(fontSize: 15)),
                       Text(controller.car!.car_color),
                       Text(" ${controller.car!.price}",
-                          style: const TextStyle(fontSize: 32)),
-
-                      ElevatedButton(onPressed: (){}, child: Text("Купить")),
-                      ElevatedButton(onPressed: (){}, child: Text("В корзину")),
+                          style: const TextStyle(fontSize: 30)),
+                      ElevatedButton(
+                          onPressed: () {}, child: const Text("Купить")),
+                      ElevatedButton(
+                          onPressed: () {}, child: const Text("В корзину")),
                     ],
                   ),
                 ),
