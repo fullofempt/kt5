@@ -13,6 +13,8 @@ part 'car.g.dart';
     return double.parse(object.substring(1));
   }
 
+  
+
 @freezed
 class Car with _$Car {
 
