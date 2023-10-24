@@ -14,9 +14,9 @@ class CarDetailsController extends GetxController {
   Future getCar(int id) async {
     try {
       _state.value = States.loading;
-      _car.value = (await _carReposit.getById(id)) as Car?;
+      _car.value = await _carReposit.getById(id);
       _state.value = States.success;
-    } catch (e) {
+    } catch (error) {
       _state.value = States.error;
     }
   }

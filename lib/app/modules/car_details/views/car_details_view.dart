@@ -22,45 +22,36 @@ class CarDetailsView extends GetView<CarDetailsController> {
               child: CircularProgressIndicator(),
             ));
           }
-          if (controller.state == States.error || controller.car == null) {
-            showDialog(
-              context: context,
-              builder: (context) {
-                return const Center(
-                  child: Text("Error!"),
-                );
-              },
-            );
-          }
           return SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(
-                    width: Get.width,
-                    height: Get.width * (9 / 16),
-                    child: const Placeholder()),
-                Container(
-                  padding: const EdgeInsets.only(top: 32, left: 16, right: 16),
-                  child: Column(
-                    children: [
-                      Text(" ${controller.car!.car_model}",
-                          style: const TextStyle(fontSize: 20)),
-                      const SizedBox(
-                        height: 24,
-                      ),
-                      Text("car: ${controller.car!.car}",
-                          style: const TextStyle(fontSize: 15)),
-                      Text(controller.car!.car_color),
-                      Text(" ${controller.car!.price}",
-                          style: const TextStyle(fontSize: 30)),
-                      ElevatedButton(
-                          onPressed: () {}, child: const Text("Купить")),
-                      ElevatedButton(
-                          onPressed: () {}, child: const Text("В корзину")),
-                    ],
+            child: Center(
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: 20),
+                    child: Column(
+                      children: [
+                        const SizedBox(
+                          height: 24,
+                        ),
+                        Text("car: ${controller.car!.car}",
+                            style: const TextStyle(fontSize: 30)),
+                        Text("car-model: ${controller.car!.car_model}"),
+                        Text("car-color: ${controller.car!.car_color}"),
+                        Container(margin: EdgeInsets.only(top:40),
+                          child: Text("PRICE: ${controller.car!.price}",
+                              style: const TextStyle(fontSize: 40)),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(top:400),
+                          width: 300,
+                          child: ElevatedButton(
+                              onPressed: () {}, child: const Text("Купить")),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           );
         }),
